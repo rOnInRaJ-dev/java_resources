@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="user">
+    <map/>
+    <node name="Login">
+      <map>
+        <entry key="username" value="admin"/>
+        <entry key="password" value="admin"/>
+      </map>
+    </node>
+  </root>
+</preferences>

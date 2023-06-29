@@ -1,0 +1,50 @@
+package com.raj;
+import java.util.Random;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner s= new Scanner (System.in);
+        Random rando= new Random();
+	    int number;
+        System.out.println("Hello user.");
+        System.out.println("I have created a program that rolls a dice at random." );
+        System.out.println("You have to guess which number is shown on top.");
+        System.out.println("Try your luck.");
+        System.out.println("To Begin, type 'Ok'");
+        String ok=s.nextLine();
+        String Ok="Ok";
+        if (ok.equals(Ok)) {
+            System.out.println("Start guessing.");
+            System.out.println("You have only 3 tries.");
+            number = 1 + rando.nextInt(6);
+            int in = s.nextInt();
+            if (in == number) {
+                System.out.println("Congrats! You guessed it right.");
+            }
+            else {
+                System.out.println("try again");
+                int ina = s.nextInt();
+                if (ina == number) {
+                    System.out.println("Congrats! You guessed it right.");
+                }
+                else {
+                    System.out.println("try again");
+                    int inb= s.nextInt();
+                    if (inb == number){
+                        System.out.println("Congrats! You guessed it right.");
+                    }
+                    else {
+                        System.out.println("Sorry. Bad luck.");
+                        System.out.println("Best of luck next time.");
+                    }
+                }
+            }
+        }
+        else {
+            System.out.println("You are so dumb.");
+            System.out.println("You can't even follow simple instructions");
+
+        }
+    }
+}

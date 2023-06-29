@@ -1,0 +1,36 @@
+
+    private void deleteRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+         String first = firstNameTextField.getText();
+        String last = secondNameTextField.getText();
+        String job = jobTitleTextField.getText();
+        
+        try {
+            resultSet.deleteRow();
+            statement.close();
+            resultSet.close();
+            
+            String host = "jdbc:mysql://localhost:3306/employee?zeroDateTimeBehavior=convertToNull";
+            String userName = "root";
+            String userPassword = "";
+            Connection connection = DriverManager.getConnection(host, userName, userPassword);
+            
+            statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            
+            String SQL = "SELECT * FROM `workers` WHERE 1 ";
+            
+            resultSet = statement.executeQuery(SQL);
+            resultSet.next();
+            int id_col = resultSet.getInt("ID");
+            String id = Integer.toString(id_col);
+            String first2 = resultSet.getString("First_Name");
+            String last2 = resultSet.getString("Second_Name");
+            String job2 = resultSet.getString("Job_Title");
+            
+            idTextField.setText(id);
+            firstNameTextField.setText(first2);
+            secondNameTextField.setText(last2);
+            jobTitleTextField.setText(job2);
+        } catch (SQLException error) {
+            JOptionPane.showMessageDialog(this, error.getMessage());
+        }
+    }                                                  

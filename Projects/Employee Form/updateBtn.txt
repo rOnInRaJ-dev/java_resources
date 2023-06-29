@@ -1,0 +1,12 @@
+private void updateRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        String first = firstNameTextField.getText();
+        String last = secondNameTextField.getText();
+        String job = jobTitleTextField.getText();
+        try{
+            resultSet.updateString("First_Name", first);
+            resultSet.updateString("Second_Name", last);
+            resultSet.updateString("Job_Title", job);
+        } catch (SQLException error) {
+            JOptionPane.showMessageDialog(this, error.getMessage());
+        }
+    }   

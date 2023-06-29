@@ -1,0 +1,23 @@
+ private void cancelNewRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        try {
+            currentRow = resultSet.getRow();
+            
+            idTextField.setText("");
+            firstNameTextField.setText("");
+            secondNameTextField.setText("");
+            jobTitleTextField.setText("");
+            
+            idTextField.setEnabled(true);
+            firstButton.setEnabled(true);
+            previousButton.setEnabled(true);
+            nextButton.setEnabled(true);
+            lastButton.setEnabled(true);
+            updateRecordButton.setEnabled(true);
+            deleteRecordButton.setEnabled(true);
+            newRecordButton.setEnabled(true);
+            saveNewRecordButton.setEnabled(false);
+            cancelNewRecordButton.setEnabled(false);
+        } catch(SQLException error){
+            JOptionPane.showMessageDialog(this,error.getMessage());
+        }
+    }          
